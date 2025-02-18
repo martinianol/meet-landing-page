@@ -17,12 +17,24 @@ $text-preset-3: 16px 110% 4px;
 $text-preset-4: 18px 110% 0px;
 $text-preset-5: 16px 150% 0px;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: $font-primary;
   background-color: $white;
   color: $slate-900;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
 }
 
 header {
@@ -32,6 +44,16 @@ header {
   padding: 20px;
   background-color: $cyan-600;
   color: $white;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  flex-grow: 1;
+}
+
+footer {
+  width: 100%;
 }
 
 h1 {
