@@ -1,7 +1,7 @@
 body {
   font-family: "Red Hat Display", sans-serif;
-  background-color: #FAFAFA;
-  color: #28283D;
+  background-color: #fafafa;
+  color: #28283d;
   margin: 0;
   padding: 0;
 }
@@ -11,8 +11,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #4D96A9;
-  color: #FAFAFA;
+  background-color: #4d96a9;
+  color: #fafafa;
 }
 
 h1 {
@@ -39,15 +39,25 @@ p {
 }
 
 button {
-  background-color: #855FB1;
-  color: #FAFAFA;
-  padding: 12px 24px;
+  background-color: #855fb1;
+  color: #fafafa;
+  padding: 16px 40px;
   border: none;
+  border-radius: 29px;
   font-size: 16px;
   cursor: pointer;
 }
-button:hover {
-  background-color: #D9B8FF;
+button.purple {
+  background-color: #855fb1;
+}
+button.purple:hover {
+  background-color: #d9b8ff;
+}
+button.cyan {
+  background-color: #4d96a9;
+}
+button.cyan:hover {
+  background-color: #8fe3f9;
 }
 
 /*# sourceMappingURL=styles.css.map */

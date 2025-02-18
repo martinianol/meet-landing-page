@@ -1,15 +1,15 @@
 // Variables
-$cyan-600: #4D96A9;
-$cyan-300: #8FE3F9;
-$purple-600: #855FB1;
-$purple-300: #D9B8FF;
-$slate-900: #28283D;
-$slate-600: #87879D;
-$slate-300: #D1D1DF;
-$white: #FAFAFA;
+$cyan-600: #4d96a9;
+$cyan-300: #8fe3f9;
+$purple-600: #855fb1;
+$purple-300: #d9b8ff;
+$slate-900: #28283d;
+$slate-600: #87879d;
+$slate-300: #d1d1df;
+$white: #fafafa;
 
 // Typography
-$font-primary: 'Red Hat Display', sans-serif;
+$font-primary: "Red Hat Display", sans-serif;
 
 $text-preset-1: 64px 110% 0px;
 $text-preset-2: 40px 110% 0px;
@@ -60,11 +60,23 @@ p {
 button {
   background-color: $purple-600;
   color: $white;
-  padding: 12px 24px;
+  padding: 16px 40px;
   border: none;
+  border-radius: 29px;
   font-size: 16px;
   cursor: pointer;
-  &:hover {
-    background-color: $purple-300;
+
+  &.purple {
+    background-color: $purple-600;
+    &:hover {
+      background-color: $purple-300;
+    }
+  }
+
+  &.cyan {
+    background-color: $cyan-600;
+    &:hover {
+      background-color: $cyan-300;
+    }
   }
 }
