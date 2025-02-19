@@ -11,11 +11,11 @@ $white: #fafafa;
 // Typography
 $font-primary: "Red Hat Display", sans-serif;
 
-$text-preset-1: 64px 110% 0px;
-$text-preset-2: 40px 110% 0px;
-$text-preset-3: 16px 110% 4px;
-$text-preset-4: 18px 110% 0px;
-$text-preset-5: 16px 150% 0px;
+$text-preset-1: clamp(40px, 5vw, 64px) / 110% $font-primary;
+$text-preset-2: clamp(32px, 5vw, 40px) / 110% $font-primary;
+$text-preset-3: clamp(12px, 5vw, 16px) / 110% $font-primary; // letter spacing 4px;
+$text-preset-4: clamp(14px, 5vw, 18px) / 150% $font-primary;
+$text-preset-5: 16px/150% $font-primary;
 
 * {
   margin: 0;
@@ -53,7 +53,33 @@ main {
 }
 
 footer {
+  position: relative;
   width: 100%;
+  padding: 64px 32px;
+  background: $cyan-300 url("../assets/mobile/image-footer.jpg") no-repeat
+    center center;
+  background-size: cover;
+  color: $white;
+
+  h2 {
+    font: $text-preset-2;
+  }
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(77, 150, 169, 0.8); // Cyan with 80% opacity
+  z-index: 0;
+}
+
+footer * {
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
@@ -62,11 +88,11 @@ h1 {
   letter-spacing: 0px;
 }
 
-h2 {
+/* h2 {
   font-size: 40px;
   line-height: 110%;
   letter-spacing: 0px;
-}
+} */
 
 h3 {
   font-size: 16px;
@@ -85,7 +111,7 @@ button {
   padding: 16px 40px;
   border: none;
   border-radius: 29px;
-  font-size: 16px;
+  font: $text-preset-5;
   cursor: pointer;
 
   &.purple {
