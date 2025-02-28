@@ -14,7 +14,7 @@ $font-primary: "Red Hat Display", sans-serif;
 
 $text-preset-1: clamp(40px, 5vw, 64px) / 110% $font-primary;
 $text-preset-2: 800 clamp(32px, 5vw, 40px) / 110% $font-primary;
-$text-preset-3: clamp(12px, 5vw, 16px) / 110% $font-primary; // letter spacing 4px;
+$text-preset-3: clamp(12px, 2vw, 16px) / 110% $font-primary; // letter spacing 4px;
 $text-preset-4: 500 clamp(14px, 5vw, 16px) / 150% $font-primary;
 $text-preset-5: 16px/150% $font-primary;
 
@@ -74,34 +74,83 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden; // Prevents margin collapse
     padding: 64px 32px;
-    gap: 48px;
   }
 
-  article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    max-width: 305px;
+  #intro {
+    gap: 48px;
 
-    h1 {
-      font: $text-preset-1;
-      color: $slate-900;
-      font-weight: 900;
-      letter-spacing: 1px;
-    }
-
-    p {
-      font: $text-preset-4;
-      color: $slate-600;
-    }
-
-    .actions {
+    article {
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 24px;
+      max-width: 305px;
+
+      h1 {
+        font: $text-preset-1;
+        color: $slate-900;
+        font-weight: 900;
+        letter-spacing: 1px;
+      }
+
+      p {
+        font: $text-preset-4;
+        color: $slate-600;
+      }
+
+      .actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+    }
+  }
+
+  #content {
+    gap: 64px;
+
+    .images-block {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .image {
+        border-radius: 8px;
+        height: 144px;
+        max-width: 147.5px;
+      }
+    }
+
+    .description {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      h3 {
+        font: $text-preset-3;
+        color: $cyan-600;
+        text-transform: uppercase;
+        font-weight: 900;
+      }
+
+      h2 {
+        font: $text-preset-2;
+        color: $slate-900;
+        font-weight: 900;
+      }
+
+      p {
+        font: $text-preset-4;
+        color: $slate-600;
+      }
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
       gap: 16px;
     }
   }
