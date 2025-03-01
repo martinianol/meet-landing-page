@@ -12,9 +12,9 @@ $white: #fafafa;
 // Typography
 $font-primary: "Red Hat Display", sans-serif;
 
-$text-preset-1: clamp(40px, 5vw, 64px) / 110% $font-primary;
-$text-preset-2: 800 clamp(32px, 5vw, 40px) / 110% $font-primary;
-$text-preset-3: clamp(12px, 2vw, 16px) / 110% $font-primary; // letter spacing 4px;
+$text-preset-1: clamp(40px, 6.25vw, 64px) / 110% $font-primary;
+$text-preset-2: 800 clamp(32px, 4.6875vw, 40px) / 110% $font-primary;
+$text-preset-3: clamp(12px, 1.823vw, 16px) / 110% $font-primary; // letter spacing 4px;
 $text-preset-4: 500 clamp(14px, 5vw, 16px) / 150% $font-primary;
 $text-preset-5: 700 16px/150% $font-primary;
 
@@ -56,18 +56,10 @@ header {
 }
 
 main {
+  width: 100%;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-
-  .hero {
-    width: 120%;
-    height: 160px;
-    background-image: url("../assets/tablet/image-hero.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
 
   .separator {
     display: flex;
@@ -105,24 +97,39 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 64px 32px;
+    padding: 64px 0px;
   }
 
   #intro {
-    gap: 48px;
+    @media (min-width: 800px) {
+      flex-direction: row;
+    }
+
+    .hero1 {
+      width: 100%;
+      height: clamp(160px, 40vw, 303px);
+      background-image: url("../assets/tablet/image-hero.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
 
     article {
+      margin-top: 48px;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 24px;
       max-width: 305px;
 
+      @media (min-width: 500px) {
+        max-width: 448px;
+      }
+
       h1 {
         font: $text-preset-1;
         color: $slate-900;
         font-weight: 900;
-        letter-spacing: 1px;
       }
 
       p {
@@ -135,12 +142,18 @@ main {
         flex-direction: column;
         align-items: center;
         gap: 16px;
+
+        @media (min-width: 500px) {
+          flex-direction: row;
+        }
       }
     }
   }
 
   #content {
+    margin-top: 64px;
     gap: 64px;
+    padding: 0px 32px;
 
     .images-block {
       display: flex;
@@ -159,6 +172,7 @@ main {
       display: flex;
       flex-direction: column;
       gap: 32px;
+      max-width: 504px;
 
       h3 {
         font: $text-preset-3;
@@ -188,15 +202,10 @@ main {
 }
 
 footer {
-  padding: 64px 32px;
-  color: $white;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
-  text-align: center;
-  max-width: 504px;
-  text-align: center;
   position: relative;
   z-index: 1;
 
@@ -205,6 +214,11 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
   z-index: 1;
+
+  @media (min-width: 500px) {
+    background-image: url("../assets/tablet/image-footer.jpg");
+    background-size: cover;
+  }
 
   // Create an overlay
   &::before {
@@ -215,12 +229,29 @@ footer {
     z-index: -1;
   }
 
+  .footer-content {
+    padding: 64px 32px;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+    max-width: 504px;
+    text-align: center;
+
+    @media (min-width: 500px) {
+      padding: 64px 0px;
+    }
+  }
+
   h2 {
     font: $text-preset-2;
   }
 
   p {
     font: $text-preset-4;
+    font-weight: 400;
     letter-spacing: 0.2px;
     text-align: center;
     height: auto;

@@ -36,17 +36,10 @@ header .logo {
 }
 
 main {
+  width: 100%;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-}
-main .hero {
-  width: 120%;
-  height: 160px;
-  background-image: url("../assets/tablet/image-hero.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 main .separator {
   display: flex;
@@ -80,23 +73,38 @@ main section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 64px 32px;
+  padding: 64px 0px;
 }
-main #intro {
-  gap: 48px;
+@media (min-width: 800px) {
+  main #intro {
+    flex-direction: row;
+  }
+}
+main #intro .hero1 {
+  width: 100%;
+  height: clamp(160px, 40vw, 303px);
+  background-image: url("../assets/tablet/image-hero.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 main #intro article {
+  margin-top: 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
   max-width: 305px;
 }
+@media (min-width: 500px) {
+  main #intro article {
+    max-width: 448px;
+  }
+}
 main #intro article h1 {
-  font: clamp(40px, 5vw, 64px)/110% "Red Hat Display", sans-serif;
+  font: clamp(40px, 6.25vw, 64px)/110% "Red Hat Display", sans-serif;
   color: #28283d;
   font-weight: 900;
-  letter-spacing: 1px;
 }
 main #intro article p {
   font: 500 clamp(14px, 5vw, 16px)/150% "Red Hat Display", sans-serif;
@@ -108,8 +116,15 @@ main #intro article .actions {
   align-items: center;
   gap: 16px;
 }
+@media (min-width: 500px) {
+  main #intro article .actions {
+    flex-direction: row;
+  }
+}
 main #content {
+  margin-top: 64px;
   gap: 64px;
+  padding: 0px 32px;
 }
 main #content .images-block {
   display: flex;
@@ -126,15 +141,16 @@ main #content .description {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  max-width: 504px;
 }
 main #content .description h3 {
-  font: clamp(12px, 2vw, 16px)/110% "Red Hat Display", sans-serif;
+  font: clamp(12px, 1.823vw, 16px)/110% "Red Hat Display", sans-serif;
   color: #4d96a9;
   text-transform: uppercase;
   font-weight: 900;
 }
 main #content .description h2 {
-  font: 800 clamp(32px, 5vw, 40px)/110% "Red Hat Display", sans-serif;
+  font: 800 clamp(32px, 4.6875vw, 40px)/110% "Red Hat Display", sans-serif;
   color: #28283d;
   font-weight: 900;
 }
@@ -149,6 +165,32 @@ main #content .title {
 }
 
 footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  background-image: url("../assets/mobile/image-footer.jpg");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+@media (min-width: 500px) {
+  footer {
+    background-image: url("../assets/tablet/image-footer.jpg");
+    background-size: cover;
+  }
+}
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(77, 150, 169, 0.8);
+  z-index: -1;
+}
+footer .footer-content {
   padding: 64px 32px;
   color: #fafafa;
   display: flex;
@@ -158,26 +200,18 @@ footer {
   text-align: center;
   max-width: 504px;
   text-align: center;
-  position: relative;
-  z-index: 1;
-  background-image: url("../assets/mobile/image-footer.jpg");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 1;
 }
-footer::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(77, 150, 169, 0.8);
-  z-index: -1;
+@media (min-width: 500px) {
+  footer .footer-content {
+    padding: 64px 0px;
+  }
 }
 footer h2 {
-  font: 800 clamp(32px, 5vw, 40px)/110% "Red Hat Display", sans-serif;
+  font: 800 clamp(32px, 4.6875vw, 40px)/110% "Red Hat Display", sans-serif;
 }
 footer p {
   font: 500 clamp(14px, 5vw, 16px)/150% "Red Hat Display", sans-serif;
+  font-weight: 400;
   letter-spacing: 0.2px;
   text-align: center;
   height: auto;
