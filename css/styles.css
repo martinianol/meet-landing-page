@@ -38,7 +38,6 @@ header .logo {
 main {
   display: flex;
   flex-direction: column;
-  gap: 64px;
   flex-grow: 1;
 }
 main .hero {
@@ -48,6 +47,34 @@ main .hero {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+main .separator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .separator .line {
+  flex-grow: 1;
+  width: 1px;
+  height: 80px;
+  background-color: #d1d1df;
+}
+main .separator .circle {
+  width: 56px;
+  height: 56px;
+  border: 1px solid #d1d1df;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 700 16px/150% "Red Hat Display", sans-serif;
+  color: #87879d;
+  background-color: #fafafa;
+}
+main .separator.ontop {
+  position: relative;
+  top: 23px;
+  z-index: 10;
 }
 main section {
   display: flex;
@@ -167,19 +194,13 @@ h3 {
   letter-spacing: 4px;
 }
 
-/* p {
-  font-size: 16px;
-  line-height: 150%;
-}
- */
 button {
   background-color: #855fb1;
   color: #fafafa;
   padding: 16px 40px;
   border: none;
   border-radius: 29px;
-  font: 16px/150% "Red Hat Display", sans-serif;
-  font-weight: 900;
+  font: 700 16px/150% "Red Hat Display", sans-serif;
   cursor: pointer;
   width: fit-content;
   display: flex;
@@ -196,6 +217,9 @@ button.purple:hover {
 }
 button.cyan {
   background-color: #4d96a9;
+}
+button.cyan span {
+  color: #8fe3f9;
 }
 button.cyan:hover {
   background-color: #8fe3f9;

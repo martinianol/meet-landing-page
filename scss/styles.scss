@@ -16,7 +16,7 @@ $text-preset-1: clamp(40px, 5vw, 64px) / 110% $font-primary;
 $text-preset-2: 800 clamp(32px, 5vw, 40px) / 110% $font-primary;
 $text-preset-3: clamp(12px, 2vw, 16px) / 110% $font-primary; // letter spacing 4px;
 $text-preset-4: 500 clamp(14px, 5vw, 16px) / 150% $font-primary;
-$text-preset-5: 16px/150% $font-primary;
+$text-preset-5: 700 16px/150% $font-primary;
 
 /* reset */
 *,
@@ -58,7 +58,6 @@ header {
 main {
   display: flex;
   flex-direction: column;
-  gap: 64px;
   flex-grow: 1;
 
   .hero {
@@ -68,6 +67,38 @@ main {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+  }
+
+  .separator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .line {
+      flex-grow: 1;
+      width: 1px;
+      height: 80px;
+      background-color: $slate-300;
+    }
+
+    .circle {
+      width: 56px;
+      height: 56px;
+      border: 1px solid $slate-300;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font: $text-preset-5;
+      color: $slate-600;
+      background-color: $white;
+    }
+
+    &.ontop {
+      position: relative;
+      top: 23px;
+      z-index: 10;
+    }
   }
 
   section {
@@ -206,11 +237,6 @@ h3 {
   letter-spacing: 4px;
 }
 
-/* p {
-  font-size: 16px;
-  line-height: 150%;
-}
- */
 button {
   background-color: $purple-600;
   color: $white;
@@ -218,7 +244,6 @@ button {
   border: none;
   border-radius: 29px;
   font: $text-preset-5;
-  font-weight: 900;
   cursor: pointer;
   width: fit-content;
   display: flex;
@@ -237,6 +262,9 @@ button {
 
   &.cyan {
     background-color: $cyan-600;
+    span {
+      color: $cyan-300;
+    }
     &:hover {
       background-color: $cyan-300;
     }
