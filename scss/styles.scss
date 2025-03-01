@@ -12,10 +12,10 @@ $white: #fafafa;
 // Typography
 $font-primary: "Red Hat Display", sans-serif;
 
-$text-preset-1: clamp(40px, 6.25vw, 64px) / 110% $font-primary;
+$text-preset-1: 800 clamp(40px, 6.25vw, 64px) / 110% $font-primary;
 $text-preset-2: 800 clamp(32px, 4.6875vw, 40px) / 110% $font-primary;
 $text-preset-3: clamp(12px, 1.823vw, 16px) / 110% $font-primary; // letter spacing 4px;
-$text-preset-4: 500 clamp(14px, 5vw, 16px) / 150% $font-primary;
+$text-preset-4: 500 clamp(14px, 5vw, 18px) / 150% $font-primary;
 $text-preset-5: 700 16px/150% $font-primary;
 
 /* reset */
@@ -60,6 +60,7 @@ main {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  align-items: center;
 
   .separator {
     display: flex;
@@ -101,8 +102,11 @@ main {
   }
 
   #intro {
+    max-width: 1800px;
     @media (min-width: 800px) {
       flex-direction: row;
+      justify-content: space-between;
+      gap: 32px;
     }
 
     .hero1 {
@@ -112,6 +116,28 @@ main {
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+
+      @media (min-width: 800px) {
+        background-image: url("../assets/desktop/image-hero-left.png");
+        background-size: cover;
+        width: 394px;
+        align-self: flex-start;
+      }
+    }
+
+    .hero2 {
+      width: 100%;
+      height: clamp(160px, 40vw, 303px);
+      display: none;
+
+      @media (min-width: 800px) {
+        display: block;
+        background-image: url("../assets/desktop/image-hero-right.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 394px;
+        align-self: flex-end;
+      }
     }
 
     article {
@@ -121,15 +147,18 @@ main {
       align-items: center;
       gap: 24px;
       max-width: 305px;
+      flex-grow: 1;
 
       @media (min-width: 500px) {
         max-width: 448px;
+      }
+      @media (min-width: 800px) {
+        gap: 32px;
       }
 
       h1 {
         font: $text-preset-1;
         color: $slate-900;
-        font-weight: 900;
       }
 
       p {

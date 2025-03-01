@@ -40,6 +40,7 @@ main {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  align-items: center;
 }
 main .separator {
   display: flex;
@@ -75,9 +76,14 @@ main section {
   align-items: center;
   padding: 64px 0px;
 }
+main #intro {
+  max-width: 1800px;
+}
 @media (min-width: 800px) {
   main #intro {
     flex-direction: row;
+    justify-content: space-between;
+    gap: 32px;
   }
 }
 main #intro .hero1 {
@@ -88,6 +94,29 @@ main #intro .hero1 {
   background-repeat: no-repeat;
   background-position: center;
 }
+@media (min-width: 800px) {
+  main #intro .hero1 {
+    background-image: url("../assets/desktop/image-hero-left.png");
+    background-size: cover;
+    width: 394px;
+    align-self: flex-start;
+  }
+}
+main #intro .hero2 {
+  width: 100%;
+  height: clamp(160px, 40vw, 303px);
+  display: none;
+}
+@media (min-width: 800px) {
+  main #intro .hero2 {
+    display: block;
+    background-image: url("../assets/desktop/image-hero-right.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 394px;
+    align-self: flex-end;
+  }
+}
 main #intro article {
   margin-top: 48px;
   display: flex;
@@ -95,19 +124,24 @@ main #intro article {
   align-items: center;
   gap: 24px;
   max-width: 305px;
+  flex-grow: 1;
 }
 @media (min-width: 500px) {
   main #intro article {
     max-width: 448px;
   }
 }
+@media (min-width: 800px) {
+  main #intro article {
+    gap: 32px;
+  }
+}
 main #intro article h1 {
-  font: clamp(40px, 6.25vw, 64px)/110% "Red Hat Display", sans-serif;
+  font: 800 clamp(40px, 6.25vw, 64px)/110% "Red Hat Display", sans-serif;
   color: #28283d;
-  font-weight: 900;
 }
 main #intro article p {
-  font: 500 clamp(14px, 5vw, 16px)/150% "Red Hat Display", sans-serif;
+  font: 500 clamp(14px, 5vw, 18px)/150% "Red Hat Display", sans-serif;
   color: #87879d;
 }
 main #intro article .actions {
@@ -155,7 +189,7 @@ main #content .description h2 {
   font-weight: 900;
 }
 main #content .description p {
-  font: 500 clamp(14px, 5vw, 16px)/150% "Red Hat Display", sans-serif;
+  font: 500 clamp(14px, 5vw, 18px)/150% "Red Hat Display", sans-serif;
   color: #87879d;
 }
 main #content .title {
@@ -210,7 +244,7 @@ footer h2 {
   font: 800 clamp(32px, 4.6875vw, 40px)/110% "Red Hat Display", sans-serif;
 }
 footer p {
-  font: 500 clamp(14px, 5vw, 16px)/150% "Red Hat Display", sans-serif;
+  font: 500 clamp(14px, 5vw, 18px)/150% "Red Hat Display", sans-serif;
   font-weight: 400;
   letter-spacing: 0.2px;
   text-align: center;
