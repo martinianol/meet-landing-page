@@ -46,6 +46,7 @@ main .separator {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 64px;
 }
 main .separator .line {
   flex-grow: 1;
@@ -67,23 +68,37 @@ main .separator .circle {
 }
 main .separator.ontop {
   position: relative;
+  margin-top: 41px;
   top: 23px;
   z-index: 10;
+}
+@media (min-width: 800px) {
+  main .separator.ontop {
+    margin-top: 49px;
+  }
 }
 main section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 64px 0px;
 }
 main #intro {
+  width: 100%;
   max-width: 1800px;
+  margin-top: 64px;
+  gap: 48px;
+}
+@media (min-width: 500px) {
+  main #intro {
+    gap: 72px;
+  }
 }
 @media (min-width: 800px) {
   main #intro {
     flex-direction: row;
     justify-content: space-between;
     gap: 32px;
+    height: 360px;
   }
 }
 main #intro .hero1 {
@@ -118,7 +133,6 @@ main #intro .hero2 {
   }
 }
 main #intro article {
-  margin-top: 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -168,8 +182,13 @@ main #content .images-block {
 }
 main #content .images-block .image {
   border-radius: 8px;
-  height: 144px;
+  height: clamp(144px, 17vw, 256px);
   max-width: 147.5px;
+}
+@media (min-width: 800px) {
+  main #content .images-block .image {
+    max-width: 256px;
+  }
 }
 main #content .description {
   display: flex;

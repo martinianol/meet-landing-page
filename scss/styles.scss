@@ -66,6 +66,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 64px;
 
     .line {
       flex-grow: 1;
@@ -89,8 +90,13 @@ main {
 
     &.ontop {
       position: relative;
+      margin-top: calc(64px - 23px);
       top: 23px;
       z-index: 10;
+
+      @media (min-width: 800px) {
+        margin-top: calc(72px - 23px);
+      }
     }
   }
 
@@ -98,15 +104,23 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 64px 0px;
   }
 
   #intro {
+    width: 100%;
     max-width: 1800px;
+    margin-top: 64px;
+    gap: 48px;
+
+    @media (min-width: 500px) {
+      gap: 72px;
+    }
+
     @media (min-width: 800px) {
       flex-direction: row;
       justify-content: space-between;
       gap: 32px;
+      height: 360px;
     }
 
     .hero1 {
@@ -141,7 +155,6 @@ main {
     }
 
     article {
-      margin-top: 48px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -192,8 +205,12 @@ main {
 
       .image {
         border-radius: 8px;
-        height: 144px;
+        height: clamp(144px, 17vw, 256px);
         max-width: 147.5px;
+
+        @media (min-width: 800px) {
+          max-width: 256px;
+        }
       }
     }
 
