@@ -57,7 +57,7 @@ header {
     background-position: center;
   }
 
-  @media(min-width: $break-point-2) {
+  @media (min-width: $break-point-2) {
     padding-top: 80px;
   }
 }
@@ -74,6 +74,10 @@ main {
     flex-direction: column;
     align-items: center;
     margin-top: 64px;
+
+    @media (min-width: $break-point-2) {
+      margin-top: 120px;
+    }
 
     .line {
       flex-grow: 1;
@@ -375,7 +379,7 @@ button {
       color: $cyan-300;
     }
     &:hover {
-      background-color: #71C0D4;
+      background-color: #71c0d4;
     }
   }
 }

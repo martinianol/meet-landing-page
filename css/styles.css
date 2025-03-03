@@ -53,6 +53,11 @@ main .separator {
   align-items: center;
   margin-top: 64px;
 }
+@media (min-width: 800px) {
+  main .separator {
+    margin-top: 120px;
+  }
+}
 main .separator .line {
   flex-grow: 1;
   width: 1px;
@@ -340,7 +345,7 @@ button.cyan span {
   color: #8fe3f9;
 }
 button.cyan:hover {
-  background-color: #71C0D4;
+  background-color: #71c0d4;
 }
 
 /*# sourceMappingURL=styles.css.map */
