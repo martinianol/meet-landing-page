@@ -56,6 +56,10 @@ header {
     background-repeat: no-repeat;
     background-position: center;
   }
+
+  @media(min-width: $break-point-2) {
+    padding-top: 80px;
+  }
 }
 
 main {
@@ -371,7 +375,7 @@ button {
       color: $cyan-300;
     }
     &:hover {
-      background-color: $cyan-300;
+      background-color: #71C0D4;
     }
   }
 }
