@@ -236,6 +236,11 @@ footer {
     background-size: cover;
   }
 }
+@media (min-width: 800px) {
+  footer {
+    background-image: url("../assets/desktop/image-footer.jpg");
+  }
+}
 footer::before {
   content: "";
   position: absolute;
@@ -257,6 +262,27 @@ footer .footer-content {
 @media (min-width: 500px) {
   footer .footer-content {
     padding: 64px 0px;
+  }
+}
+@media (min-width: 1000px) {
+  footer .footer-content {
+    padding: 112px 0px;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 77.78%;
+    gap: 32px;
+    max-width: 1440px;
+  }
+  footer .footer-content h2 {
+    max-width: 455px;
+    text-align: left;
+  }
+  footer .footer-content p {
+    max-width: 355px;
+    text-align: left;
+  }
+  footer .footer-content button {
+    margin-left: auto;
   }
 }
 footer h2 {

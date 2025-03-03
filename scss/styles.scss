@@ -18,6 +18,9 @@ $text-preset-3: clamp(12px, 1.823vw, 16px) / 110% $font-primary; // letter spaci
 $text-preset-4: 500 clamp(14px, 5vw, 18px) / 150% $font-primary;
 $text-preset-5: 700 16px/150% $font-primary;
 
+$break-point-1: 500px;
+$break-point-2: 800px;
+
 /* reset */
 *,
 *::before,
@@ -94,7 +97,7 @@ main {
       top: 23px;
       z-index: 10;
 
-      @media (min-width: 800px) {
+      @media (min-width: $break-point-2) {
         margin-top: calc(72px - 23px);
       }
     }
@@ -112,11 +115,11 @@ main {
     margin-top: 64px;
     gap: 48px;
 
-    @media (min-width: 500px) {
+    @media (min-width: $break-point-1) {
       gap: 72px;
     }
 
-    @media (min-width: 800px) {
+    @media (min-width: $break-point-2) {
       flex-direction: row;
       justify-content: space-between;
       gap: 32px;
@@ -131,7 +134,7 @@ main {
       background-repeat: no-repeat;
       background-position: center;
 
-      @media (min-width: 800px) {
+      @media (min-width: $break-point-2) {
         background-image: url("../assets/desktop/image-hero-left.png");
         background-size: cover;
         width: 394px;
@@ -144,7 +147,7 @@ main {
       height: clamp(160px, 40vw, 303px);
       display: none;
 
-      @media (min-width: 800px) {
+      @media (min-width: $break-point-2) {
         display: block;
         background-image: url("../assets/desktop/image-hero-right.png");
         background-size: cover;
@@ -162,10 +165,10 @@ main {
       max-width: 305px;
       flex-grow: 1;
 
-      @media (min-width: 500px) {
+      @media (min-width: $break-point-1) {
         max-width: 448px;
       }
-      @media (min-width: 800px) {
+      @media (min-width: $break-point-2) {
         gap: 32px;
       }
 
@@ -185,7 +188,7 @@ main {
         align-items: center;
         gap: 16px;
 
-        @media (min-width: 500px) {
+        @media (min-width: $break-point-1) {
           flex-direction: row;
         }
       }
@@ -208,7 +211,7 @@ main {
         height: clamp(144px, 17vw, 256px);
         max-width: 147.5px;
 
-        @media (min-width: 800px) {
+        @media (min-width: $break-point-2) {
           max-width: 256px;
         }
       }
@@ -261,9 +264,12 @@ footer {
   background-repeat: no-repeat;
   z-index: 1;
 
-  @media (min-width: 500px) {
+  @media (min-width: $break-point-1) {
     background-image: url("../assets/tablet/image-footer.jpg");
     background-size: cover;
+  }
+  @media (min-width: $break-point-2) {
+    background-image: url("../assets/desktop/image-footer.jpg");
   }
 
   // Create an overlay
@@ -286,8 +292,30 @@ footer {
     max-width: 504px;
     text-align: center;
 
-    @media (min-width: 500px) {
+    @media (min-width: $break-point-1) {
       padding: 64px 0px;
+    }
+    @media (min-width: 1000px) {
+      padding: 112px 0px;
+      flex-direction: row;
+      align-items: flex-start;
+      width: 77.78%;
+      gap: 32px;
+      max-width: 1440px;
+
+      h2 {
+        max-width: 455px;
+        text-align: left;
+      }
+
+      p {
+        max-width: 355px;
+        text-align: left;
+      }
+
+      button {
+        margin-left: auto;
+      }
     }
   }
 
